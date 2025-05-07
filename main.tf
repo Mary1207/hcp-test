@@ -1,7 +1,16 @@
 resource "aws_instance" "test" {
-  ami = "ami-00a929b66ed6e0de6"
+  ami = "ami-0f88e80871fd81e91"
   instance_type = "t2.micro"
   tags = {
     Name = "steven"
+  }
+}
+
+resource "aws_iam_user" "tivo" {
+  name = "loadbalancer"
+  path = "/system/"
+
+  tags = {
+    tag-key = "tivo"
   }
 }
